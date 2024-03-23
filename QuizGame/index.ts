@@ -1,3 +1,5 @@
+#! /usr/bin/env node
+
 import inquirer from "inquirer";
 
 console.log("********** General Science Quiz By Ali **********");

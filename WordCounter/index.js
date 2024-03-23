@@ -1,3 +1,4 @@
+#! /usr/bin/env node
 import inquirer from "inquirer";
 let isRunning = true;
 console.log("********** Word Counter By Ali **********");

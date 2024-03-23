@@ -1,3 +1,5 @@
+#! /usr/bin/env node
+
 import inquirer from "inquirer";
 
 function getRandomNumber(min: number, max: number) {
@@ -11,6 +13,7 @@ let randomNumber: number = parseInt(getRandomNumber(1, 100).toString())
 
 console.log("********** Welcome to Ali's Number Guessing Game **********")
 console.log("\nWe will be choosing a random number between 1 and 100 and you have to guess what the number is!")
+console.log("You have 5 tries to do this!")
 console.log("\nLets Start!\n")
 
 for(let i = 0; i < numberOfTries; i++ ){
@@ -32,4 +35,5 @@ for(let i = 0; i < numberOfTries; i++ ){
     
 }
 console.log("You have run out of your tries!")
+console.log(`The answer was ${randomNumber}`)
 process.exit(1)
