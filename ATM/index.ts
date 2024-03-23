@@ -1,7 +1,9 @@
+#! /usr/bin/env node
+
 import inquirer from "inquirer";
 
-let userId = "Pakistan";
-let userPass = 1947
+// let userId = "Pakistan";
+// let userPass = 1947
 let balance = 2000
 let isRunning = true
 
@@ -21,7 +23,7 @@ let answer = await inquirer.prompt([
     }
 ])
 while(isRunning){
-if(answer.UserID == userId && answer.UserPassword == userPass){
+
     let result = await inquirer.prompt([
         {
             type: "list",
@@ -68,7 +70,4 @@ if(answer.UserID == userId && answer.UserPassword == userPass){
         isRunning = false
         process.exit(1)
     }
-}else{
-    console.clear()
-    console.log("Invalid Credentials. Please try Again!")
-}}
+}

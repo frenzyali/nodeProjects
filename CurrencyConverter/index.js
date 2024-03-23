@@ -5,37 +5,49 @@ console.log("****************** Welcome ***************");
 while (isRunning) {
     let answer = await inquirer.prompt([
         {
-            type: "number",
-            name: "originalmoney",
-            message: "Enter the amount of money(In Rupees) you want to convert:"
+            type: "list",
+            name: "currencyGiven",
+            message: "What is your currency?",
+            choices: ["Rupees", "Euro", "Pound Sterling", "UAE Dirham", "Dollar"]
         },
         {
             type: "list",
-            name: "currency",
-            message: "Which currency would you like to convert it to?",
-            choices: ["Dollar", "Euro", "Pound Sterling", "UAE Dirham", "Saudia Riyals", "Japanese Yen", "Indian Rupees"]
+            name: "currencyDesired",
+            message: "In which currency would you like to convert it to?",
+            choices: ["Rupees", "Euro", "Pound Sterling", "UAE Dirham", "Dollar"]
+        },
+        {
+            type: "number",
+            name: "amount",
+            message: "Enter amount: "
         }
     ]);
-    if (answer.currency === "Dollar") {
-        console.log("The converter currency is:$" + answer.originalmoney * 0.0036);
+    function RupeesToEuro(money) {
+        return money * 0.0033;
     }
-    else if (answer.currency === "Euro") {
-        console.log("The converter currency is:€" + answer.originalmoney * 0.0033);
+    function RupeesToPound(money) {
+        return money * 0.0028;
     }
-    else if (answer.currency === "Pound Sterling") {
-        console.log("The converter currency is:£" + answer.originalmoney * 0.0028);
+    function RupeesToDirham(money) {
+        return money * 0.013;
     }
-    else if (answer.currency === "UAE Dirham") {
-        console.log("The converter currency is: " + answer.originalmoney * 0.013 + " Dirhams");
+    function RupeesToDollar(money) {
+        return money * 0.0036;
     }
-    else if (answer.currency === "Saudia Riyals") {
-        console.log("The converter currency is: " + answer.originalmoney * 0.013 + " Riyals");
+    if (answer.currencyGiven == "Rupees" && answer.currencyDesired == "Euro") {
+        console.log("The amount converted is: " + RupeesToEuro(answer.amount));
     }
-    else if (answer.currency === "Japanese Yen") {
-        console.log("The converter currency is:¥" + answer.originalmoney * 0.53);
+    if (answer.currencyGiven == "Rupees" && answer.currencyDesired == "Pound Sterling") {
+        console.log("The amount converted is: " + RupeesToPound(answer.amount));
     }
-    else if (answer.currency === "Indian Rupees") {
-        console.log("The converter currency is:₹" + answer.originalmoney * 0.30);
+    if (answer.currencyGiven == "Rupees" && answer.currencyDesired == "UAE Dirham") {
+        console.log("The amount converted is: " + RupeesToDirham(answer.amount));
+    }
+    if (answer.currencyGiven == "Rupees" && answer.currencyDesired == "Dollar") {
+        console.log("The amount converted is: " + RupeesToDollar(answer.amount));
+    }
+    if (answer.currencyGiven == "Rupees" && answer.currencyDesired == "Rupees") {
+        console.log("The amount converted is: " + answer.amount);
     }
     let exit = await inquirer.prompt([
         {
