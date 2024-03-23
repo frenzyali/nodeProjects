@@ -1,7 +1,7 @@
 #! /usr/bin/env node
 import inquirer from "inquirer";
-let userId = "Pakistan";
-let userPass = 1947;
+// let userId = "Pakistan";
+// let userPass = 1947
 let balance = 2000;
 let isRunning = true;
 console.log("********** Ali's ATM Project**********");

@@ -1,9 +1,11 @@
 {
-  "name": "syedalihussain31-atm",
+  "name": "syedalihussain31-simple-atm",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "bin": "index.js",
+  "bin": {
+    "syedalihussain31-atm": "index.js"
+  },
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
