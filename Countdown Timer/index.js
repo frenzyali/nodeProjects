@@ -1,3 +1,4 @@
+#! /usr/bin/env node
 function startCountdown(targetDateString) {
     let targetDate = new Date(targetDateString).getTime(); // ==> Gets the original time function!
     let intervalId = setInterval(() => {
